@@ -21,6 +21,14 @@ docker run -d \
 	-v /home/postgresql/django:/var/lib/postgresql/data \
 	postgres:13.5
 ```
+### Redis Setup on docker for development
+```
+docker run -d \
+    --name django-boilerplate-redis \
+    -p 6379:6379 \
+    -v /home/redis/django:/data \
+    redis redis-server --save 60 1 --loglevel warning
+```
 
 ### Environment file
 ##### Create a ```.env``` file in root directory with bellow mentioned data:
